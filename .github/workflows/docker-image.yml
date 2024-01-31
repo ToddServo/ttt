@@ -37,8 +37,8 @@ jobs:
         run: docker build --tag kelso-weather-kreator-rust-image --file dockerfile .
       - name: Build the Docker container
         run: docker compose --file compose.yml up --detach
-      - name: Run make inside the container
-        run: docker exec -t kelso-weather-kreator-container ./main.rs
+      - name: Build
+        run: cargo build --verbose
       - name: Show me what happened
         run: |
           pwd
