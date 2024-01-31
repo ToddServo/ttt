@@ -12,8 +12,8 @@ services:
 #####################################################################
 ##     We may not need to use an entrypoint to make rust files     ##
 #####################################################################
-#    command: make
-#    entrypoint: /home/app/entrypoint.sh
+    command: make
+    entrypoint: /home/app/entrypoint.sh
     container_name: kelso-weather-kreator-container
     image: kelso-weather-kreator-rust-image
     tty: true
