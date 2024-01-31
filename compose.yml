@@ -5,7 +5,7 @@ name: "kelso-weather-kreator-container"
 
 services:
 
-  kelso-weather-kreator:
+  kelso-weather-kreator-container:
     build:
       context: .
       dockerfile: ./dockerfile
