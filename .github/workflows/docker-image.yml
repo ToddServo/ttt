@@ -26,10 +26,6 @@ jobs:
         run: docker compose --file compose.yml up --detach
       - name: Run make inside the container
         run: docker exec -t kelso-weather-kreator-container make
-      - name: Show me what happened
-        run: |
-          pwd
-          ls -al output
           
       - uses: actions/upload-artifact@v3
         with:
