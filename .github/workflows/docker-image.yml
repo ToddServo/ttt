@@ -33,7 +33,7 @@ jobs:
           path: output/
 
       - name: Clear README with intro text
-        run: |
+        run: 
           cat README.md
           echo -e "# Welcome to Mike Kelso test repo" > README.md
                     echo -e " " >> README.md
