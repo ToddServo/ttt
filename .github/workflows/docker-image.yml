@@ -38,7 +38,7 @@ jobs:
       - name: Build the Docker container
         run: docker compose --file compose.yml up --detach
       - name: Build
-        run: cargo build --verbose
+        run: docker exec -t kelso-weather-kreator-container make
       - name: Show me what happened
         run: |
           pwd
