@@ -12,14 +12,16 @@ on:
 
 jobs:
   build:
-    runs-on: rust:latest
-    
+    runs-on: ubuntu-latest
+    continue-on-error: true
+
     steps:
       - uses: actions/checkout@v3
       - name: Test initial directory contents
         run: |
           pwd
           ls -Rl
+      - run: rustup update ${{ matrix.toolchain }} && rustup default ${{ matrix.toolchain }}
       - name: Build the Docker image
         run: docker build --tag kelso-weather-kreator-rust-image --file dockerfile .
       - name: Build the Docker container
@@ -30,7 +32,7 @@ jobs:
         run: |
           pwd
           ls -al output
-
+          
       - uses: actions/upload-artifact@v3
         with:
           name: "Completed_Files"
