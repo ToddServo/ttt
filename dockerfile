@@ -8,6 +8,11 @@ ENV LANG en_US.utf8
 ENV TZ=America/Denver
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+RUN apt-get update && \
+  DEBIAN_FRONTEND=noninteractive TZ="America/Denver" apt-get -y install tzdata && \
+  apt-get install -y \
+  rustc
+
 RUN mkdir -p /home/app
 
 
